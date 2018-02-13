@@ -16,7 +16,7 @@ Test
 
     server {
         location /test {
-            log_by_lua '
+            content_by_lua '
                 local pinyin = require "resty.pinyin"
                 local str = "这是一个ngx_lua小程序,它可以将字符串中的汉字转换为拼音!"
                 local to_py, err = pinyin.convert(str)
